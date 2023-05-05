@@ -1,6 +1,6 @@
 html {
-    background: radial-gradient(farthest-corner at right top,#6b256f, #35122e);
-    height: 100%;
+    background: radial-gradient(farthest-corner at right top,#76704C, #606C38, #283618);
+    height: 100vh;
     font-family: 'Roboto', cursive;
 }
 
@@ -16,10 +16,11 @@ html {
     flex-grow: 1;
     flex-basis: auto;
     min-width: 600px;
+
     padding: 4em 2em 2em;
     box-sizing: border-box;
     display: flex;
-    background: #295872;
+    background: #BC6C25;
     border-radius: 10px;
     gap: 2em;
 }
@@ -100,7 +101,7 @@ html {
 }
 
 .cadastrar {
-    background-color: #40112D;
+    background-color: #8d2b00;
     color: #FFFFFF;
     cursor: pointer;
     transition: filter .5s;
@@ -113,13 +114,13 @@ html {
 .lista {
     margin: 0;
     padding: 0;
-    max-width: 550px;
+    width: 45%;
 }
 
 .item {
     list-style: none;
     padding: 0.6em 2em;
-    background: #FFFFFF;
+    background: #DDA15E;
     border-radius: 10px;
     margin: 0 0 1em;
     width: 100%;
@@ -137,8 +138,7 @@ html {
     justify-content: center;
     width: 40px;
     height: 40px;
-    Background: #35122e;
-    color: white;
+    Background: #FEFAE0;
     font-weight: 400;
 }
 
