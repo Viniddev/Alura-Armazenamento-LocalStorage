@@ -126,6 +126,7 @@ html {
     width: 100%;
     box-sizing: border-box;
     display: inline-flex;
+    justify-content: space-between;
     align-items: center;
     gap: 1em;
     font-size: 20px;
@@ -141,4 +142,11 @@ html {
     Background: #FEFAE0;
     font-weight: 400;
 }
-
+button{
+    transition: all .5s;
+}
+button:hover{
+    filter: brightness(1.5);
+    color: #c03527;
+    font-weight: 600;
+}

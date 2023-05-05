@@ -19,7 +19,11 @@ form.addEventListener("submit", (evento) => {
     
     if(existe){
         itemAtual.id = existe.id
+        console.log(existe.id)
+        
         atualizaElemento(itemAtual)
+
+        itens[existe.id] = itemAtual
     }else{
         itemAtual.id = itens.length
         criaElemento(itemAtual)
@@ -48,11 +52,38 @@ function criaElemento(item) {
     numeroItem.innerHTML = item.quantidade
     numeroItem.dataset.id = item.id
 
+
     novoItem.appendChild(numeroItem)
     novoItem.innerHTML += item.nome
+
+    novoItem.appendChild(botaoDeletar(item.id))
+
     lista.appendChild(novoItem)
 }
 
 function atualizaElemento(item){
     document.querySelector("[data-id='"+item.id+"']").innerHTML = item.quantidade
+}
+
+function botaoDeletar(id){
+    const botao = document.createElement("button")
+    botao.innerText = "X"
+
+    botao.style.background = "#FEFAE0"
+    botao.style.borderRadius = "50%"
+    botao.style.border = "none"
+    botao.style.width = "40px"
+    botao.style.height = "40px"
+
+    botao.addEventListener("click", function(){
+        deletaElemento(this.parentNode, id)
+    })
+
+    return botao
+}
+
+function deletaElemento(objeto, idElemento){
+    objeto.remove()
+    itens.splice(itens.findIndex(elemento => elemento.id === idElemento), 1)
+    localStorage.setItem("itens", JSON.stringify(itens))
 }
