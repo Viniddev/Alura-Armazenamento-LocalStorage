@@ -18,13 +18,13 @@ form.addEventListener("submit", (evento) => {
     const existe = itens.find(elemento => elemento.nome === nome.value)
     
     if(existe){
-        itemAtual.id = existe.id
+        itemAtual.id = itens[itens.length - 1] ? (itens[itens.length - 1]).id + 1 : 0;
         console.log(existe.id)
         
         atualizaElemento(itemAtual)
 
-        itens[existe.id] = itemAtual
-    }else{
+        itens[itens.findIndex(elemento => elemento.id === existe.id)] = itemAtual
+    }else{  
         itemAtual.id = itens.length
         criaElemento(itemAtual)
         itens.push(itemAtual)
